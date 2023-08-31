@@ -2,9 +2,9 @@ name: Deploy to GH Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 concurrency:
   group: "pages"
@@ -14,19 +14,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18.x
-        cache: 'yarn'
-    - name: Install dependencies
-      run: yarn
-    - name: Build app
-      run: yarn build
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "yarn"
+      - name: Install dependencies
+        run: yarn
+      - name: Build app
+        run: yarn build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./dist
 
   deploy:
     runs-on: ubuntu-latest
