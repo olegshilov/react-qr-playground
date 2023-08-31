@@ -4,6 +4,7 @@ import { comlink } from "vite-plugin-comlink";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/react-qr-playground/",
   plugins: [react(), comlink()],
   worker: {
     format: "es",
