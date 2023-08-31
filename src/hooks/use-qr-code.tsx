@@ -10,7 +10,7 @@ export function useQrCode({
   captureLastFrame?: boolean;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
-  const lastFrame = useRef<string>(null);
+  const lastFrame = useRef<string | null>(null);
   const [result, setResult] = useState<string | null>(null);
   const [isStopped, setStopped] = useState(false);
   const { stream, error } = useUserMedia({
