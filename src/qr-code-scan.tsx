@@ -9,8 +9,8 @@ export function QRCodeScan({
 }: {
   onResult: (result: string) => void;
 }) {
-  const { ref, result, isStopped, lastFrame, stop } = useQrCode({
-    captureLastFrame: true,
+  const { ref, result } = useQrCode({
+    captureLastFrame: false,
     videoConstrains: {
       width,
       height,
@@ -20,7 +20,6 @@ export function QRCodeScan({
   useEffect(() => {
     if (result) {
       onResult(result);
-      stop();
     }
   }, [onResult, result]);
 
@@ -34,12 +33,12 @@ export function QRCodeScan({
         className="object-cover w-full h-full relative z-0"
       />
 
-      {lastFrame.current && isStopped && (
+      {/* {lastFrame.current && isStopped && (
         <img
           src={lastFrame.current}
           className="absolute inset-0 object-cover w-full h-full z-10"
         />
-      )}
+      )} */}
     </div>
   );
 }

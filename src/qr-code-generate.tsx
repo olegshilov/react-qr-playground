@@ -11,14 +11,14 @@ export function QRCodeGenerate({
 }) {
   console.log("QRCodeGenerate", { data });
   return (
-    <div className="relative aspect-square w-fit">
+    <div className="relative aspect-square w-fit p-4 bg-white">
       <QRCodeSVG
         value={data}
         size={size}
         bgColor="#ffffff"
         fgColor="#0D0D0E"
         level={level}
-        includeMargin={true}
+        // includeMargin={true}
         markerEnd="round"
         markerHeight={100}
       />

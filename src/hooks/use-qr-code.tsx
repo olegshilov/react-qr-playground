@@ -34,7 +34,7 @@ export function useQrCode({
     }
 
     if (video) {
-      video.srcObject = null;
+      // video.srcObject = null;
       setStopped(true);
     }
   }, [stream]);
@@ -48,7 +48,7 @@ export function useQrCode({
     const video = ref.current;
 
     if (video && captureStream) {
-      video.src = "";
+      // video.src = "";
       video.srcObject = captureStream;
     }
 
@@ -59,10 +59,10 @@ export function useQrCode({
         });
       }
 
-      if (video) {
-        video.src = "";
-        video.srcObject = null;
-      }
+      // if (video) {
+      //   video.src = "";
+      //   video.srcObject = null;
+      // }
     };
   }, [ref, stream]);
 
