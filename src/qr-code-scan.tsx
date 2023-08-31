@@ -25,7 +25,7 @@ export function QRCodeScan({
   }, [onResult, result]);
 
   return (
-    <div className="relative md:aspect-video aspect-[9/16] md:w-fit w-full h-full md:h-auto">
+    <div className="relative aspect-video w-fit">
       <video
         ref={ref}
         autoPlay
