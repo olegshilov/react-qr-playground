@@ -133,8 +133,8 @@ export function App() {
         </div>
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-[32px] lg:py-[68px]">
-            <QRGenerate />
             <QRScan />
+            <QRGenerate />
           </div>
         </Container>
       </section>
